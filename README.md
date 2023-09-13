@@ -1,4 +1,4 @@
-# PAAS-TA-PORTAL-COMMON-API
+# ap-portal-common-api
 ## 버전 정보
 Portal v2.0-FINAL - DB API 제공하는 서비스
  
