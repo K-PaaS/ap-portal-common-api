@@ -12,8 +12,8 @@ applications:
     BP_SPRING_CLOUD_BINDINGS_DISABLED: true
     spring_application_name: PortalCommonApi
 
-    spring_security_username: admin
-    spring_security_password: openkpaas
+    spring_security_username: <SPRING_SECURITY_USERNAME>
+    spring_security_password: <SPRING_SECURITY_PASSWORD>
 
     datasource_cc_driver-class-name: <AP_DB_DRIVER>                                         # (e.g. org.postgresql.Driver OR com.mysql.jdbc.Driver)
     datasource_cc_url: jdbc:<AP_DATABASE>://<AP_DB_IP>:<AP_DB_PORT>/<CC_DB_NAME>  # (e.g. AP_DATABASE :: postgresql OR mysql)
