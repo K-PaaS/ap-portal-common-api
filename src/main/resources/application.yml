@@ -3,8 +3,8 @@ spring:
   application:
     name: PortalCommonApi  # Service registers under this name
   security:
-    username: admin
-    password: openpaasta
+    username: <SPRING_SECURITY_USERNAME>
+    password: <SPRING_SECURITY_PASSWORD>
 
 # HTTP Server
 server:
@@ -16,8 +16,8 @@ management:  # If you set off security...
 
 datasource:
   cc:
-    driver-class-name: <PAAS-TA_DB_DRIVER>                                         # (e.g. org.postgresql.Driver OR com.mysql.jdbc.Driver)
-    url: jdbc:<PAAS-TA_DATABASE>://<PAAS-TA_DB_IP>:<PAAS-TA_DB_PORT>/<CC_DB_NAME>  # (e.g. PAAS-TA_DATABASE :: postgresql OR mysql)
+    driver-class-name: <AP_DB_DRIVER>                                         # (e.g. org.postgresql.Driver OR com.mysql.jdbc.Driver)
+    url: jdbc:<AP_DATABASE>://<AP_DB_IP>:<AP_DB_PORT>/<CC_DB_NAME>  # (e.g. AP_DATABASE :: postgresql OR mysql)
     username: <CC_DB_USER_NAME>
     password: <CC_DB_USER_PASSWORD>
   portal:
@@ -26,8 +26,8 @@ datasource:
     username: <PORTAL_DB_USER>
     password: <PORTAL_DB_USER_PASSWORD>
   uaa:
-    driver-class-name: <PAAS-TA_DB_DRIVER>                                          # (e.g. org.postgresql.Driver OR com.mysql.jdbc.Driver)
-    url: jdbc:<PAAS-TA_DATABASE>://<PAAS-TA_DB_IP>:<PAAS-TA_DB_PORT>/<UAA_DB_NAME>  # (e.g. PAAS-TA_DATABASE :: postgresql OR mysql)
+    driver-class-name: <AP_DB_DRIVER>                                          # (e.g. org.postgresql.Driver OR com.mysql.jdbc.Driver)
+    url: jdbc:<AP_DATABASE>://<AP_DB_IP>:<AP_DB_PORT>/<UAA_DB_NAME>  # (e.g. AP_DATABASE :: postgresql OR mysql)
     username: <UAA_DB_USER_NAME>
     password: <UAA_DB_USER_PASSWORD>
 jpa:
@@ -54,16 +54,16 @@ mail:
       authUrl: http://<MAIL_SMTP_PROPERTIES_AUTHURL>
 #      imgUrl: http://localhost:8080/v1/KEY_84586dfdc15e4f8b9c2a8e8090ed9810/portal-container/65bdc7f43e11433b8f17683f96c7e626.png  # YOUR IMG URL
       charset: UTF-8
-      subject: 'PaaS-TA User Potal 인증메일'
+      subject: 'K-PaaS User Potal 인증메일'
       createUrl: authcreate
       expiredUrl: authreset
       inviteUrl: inviteorg
 
-paasta:
+ap:
   portal:
     api:
       authorization:
-        base64: Basic YWRtaW46b3BlbnBhYXN0YQ==
+        base64: <HEADER_AUTH>
       zuulUrl:
         cfapi: http://<PORTAL_GATEWAY_IP>:<PORTAL_GATEWAY_PORT>/portalapi
         commonapi: http://<PORTAL_GATEWAY_IP>:<PORTAL_GATEWAY_PORT>/commonapi
